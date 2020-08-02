@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="GRADAPP.Core\**" />
+    <Compile Remove="GRADAPP.Infrastructure\**" />
+    <Content Remove="GRADAPP.Core\**" />
+    <Content Remove="GRADAPP.Infrastructure\**" />
+    <EmbeddedResource Remove="GRADAPP.Core\**" />
+    <EmbeddedResource Remove="GRADAPP.Infrastructure\**" />
+    <None Remove="GRADAPP.Core\**" />
+    <None Remove="GRADAPP.Infrastructure\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="APIModels\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="GRADAPP.Core\GRADAPP.Core.csproj" />
+    <ProjectReference Include="GRADAPP.Infrastructure\GRADAPP.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
