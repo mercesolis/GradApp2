@@ -14,7 +14,7 @@ namespace GRADAPP.Controllers
     [ApiController]
     public class ActivitiesController : Controller
     {
-        private readonly IActivityRepository _activityRepository;
+        private IActivityRepository _activityRepository;
 
         public ActivitiesController(IActivityRepository activityRepository)
         {
@@ -27,7 +27,7 @@ namespace GRADAPP.Controllers
         public IActionResult Get()
         {
             var activities = _activityRepository.GetAll().ToList();
-            return Ok(activities.ToApiModel());
+            return Ok(activities);
 
         }
 

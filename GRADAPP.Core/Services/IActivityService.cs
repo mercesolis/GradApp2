@@ -7,7 +7,7 @@ namespace GRADAPP.Core.Services
     public interface IActivityService
     {
         Activity Add(Activity Activity);
-        Activity Update(Activity Activity);
+        Activity Update(Activity updatedActivity);
         Activity Get(int Id);
         IEnumerable<Activity> GetAll();
         void Remove(int Id);

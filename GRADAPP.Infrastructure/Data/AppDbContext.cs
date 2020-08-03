@@ -9,12 +9,11 @@ namespace GRADAPP.Infrastructure.Data
         {
             public DbSet<Family> Members { get; set; }
             public DbSet<Activity> Activities { get; set; }
-            // NOTE that we don't have to define a Users DbSet. It is given to us by IdentityDbContext.
+            
 
-            // This method runs once when the DbContext is first used.
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                optionsBuilder.UseSqlite("Data Source=../gradapp/GRADAPP.Infrastructure\familyapp.db");
+                optionsBuilder.UseSqlite("Data Source=../gradapp/GRADAPP.Infrastructure/familyapp.db");
             }
 
             // This method runs once when the DbContext is first used.

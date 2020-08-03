@@ -6,7 +6,7 @@ namespace GRADAPP.Core.Services
 {
     public class ActivityService : IActivityService
     {
-        private readonly IActivityRepository _activityRepository;
+        private IActivityRepository _activityRepository;
         public ActivityService(IActivityRepository activityRepository)
         {
             _activityRepository = activityRepository;

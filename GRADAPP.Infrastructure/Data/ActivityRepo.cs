@@ -22,11 +22,11 @@ namespace GRADAPP.Infrastructure.Data
             return activity;
         }
 
-        public Activity Get(int Id)
+        public Activity Get(int id)
         {
             return _dbContext.Activities
                 .Include(a => a.Family)
-                .SingleOrDefault(b => b.Id == Id);
+                .SingleOrDefault(b => b.Id == id);
         }
 
         public IEnumerable<Activity> GetAll()

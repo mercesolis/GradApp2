@@ -39,9 +39,9 @@ namespace GRADAPP.APIModels
             return Activity.Select(f => f.ToApiModel());
         }
 
-        public static IEnumerable<Activity> ToDomainModel(this IEnumerable<ActivityModel> ActivityModels)
+        public static IEnumerable<Activity> ToDomainModel(this IEnumerable<ActivityModel> ActivityModel)
         {
-            return ActivityModels.Select(f => f.ToDomainModel());
+            return ActivityModel.Select(f => f.ToDomainModel());
         }
     }
 }
